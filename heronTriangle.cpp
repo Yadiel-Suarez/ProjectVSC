@@ -3,11 +3,33 @@
 
 using namespace std;
 
-double getArea(int s1, int s2, int s3){
-    double s = (s1 + s2 + s3)/2;
-    double area = sqrt(s * (s-s1) * (s-s2) * (s-s3));
+class Triangle{
+    public:
+        int side1;
+        int side2;
+        int side3;
+};
+
+double getArea(Triangle t){
+    double s = (t.side1 + t.side2 + t.side3)/2.0;
+    double area = sqrt(s * (s-t.side1) * (s-t.side2) * (s-t.side3));
     return area;
 }
+
+bool hasLargerArea(Triangle t1, Triangle t2){
+    return (getArea(t1) > getArea(t2));
+}
+
+double sumOfAreas(Triangle triangles[], int size){
+    double result = 0;
+    for(int i=0; i < size; i++)
+        result += getArea(triangles[i]);
+}
+
+Triangle scale(Triangle original){
+
+}
+
 
 int main(){
     double areaResult = getArea(10,10,10);
