@@ -1,14 +1,8 @@
 #include <iostream>
 #include <cmath>
+#include "triangle.h"
 
 using namespace std;
-
-class Triangle{
-    public:
-        int side1;
-        int side2;
-        int side3;
-};
 
 double getArea(Triangle t){
     double s = (t.side1 + t.side2 + t.side3)/2.0;
@@ -24,18 +18,21 @@ double sumOfAreas(Triangle triangles[], int size){
     double result = 0;
     for(int i=0; i < size; i++)
         result += getArea(triangles[i]);
+    return result;
 }
 
-Triangle scale(Triangle original){
-
+Triangle scale(Triangle original, double scale){
+    return Triangle(original.side1*scale, original.side2*scale, original.side3*scale);
 }
 
 
 int main(){
-    double areaResult = getArea(10,10,10);
+    double areaResult = getArea(Triangle(10,10,10));
     cout << "Area of triangle is: " << areaResult << endl;
 
-    areaResult = getArea(20,20,30);
+    areaResult = getArea(Triangle(20,20,30));
     cout << "Area of triangle is: " << areaResult << endl;
+
+    Triangle result = scale(Triangle(10,10,10), 2);
 
 }
