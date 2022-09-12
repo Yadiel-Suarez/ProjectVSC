@@ -1,4 +1,4 @@
-#include "triangle.h"
+#include "include/triangle.h"
 
 Triangle::Triangle(int s1, int s2, int s3){
     this->side1 = s1;
