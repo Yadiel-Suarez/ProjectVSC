@@ -12,7 +12,8 @@ int main(){
     cout << "Area of triangle is: " << areaResult << endl;
 
     Triangle t1 = Triangle(10,10,10);
-    Triangle result = t1.scale(2);
+    
+    Triangle result = t1.scale(2); //Llamada de funcion con parametro (2)
 
     cout << result.getSide1() << endl;
     result.setSide1(30);
@@ -23,6 +24,8 @@ int main(){
     Triangle triangles[] = {t1, t2, result};
 
     cout << Triangle::sumOfAreas(triangles, 3) << endl;
+
+    cout << result.getSide1() << endl;
 
     //Triangle::sumOfAreas();
 
