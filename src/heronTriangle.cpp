@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <vector>
 #include "include/triangle.h"
 
 using namespace std;
@@ -21,12 +22,19 @@ int main(){
     
     Triangle t2 = Triangle(10,20,30);
 
-    Triangle triangles[] = {t1, t2, result};
-
-    cout << Triangle::sumOfAreas(triangles, 3) << endl;
+    //Triangle triangles[] = {t1, t2, result};
 
     cout << result.getSide1() << endl;
 
-    //Triangle::sumOfAreas();
+    Triangle triangulo1(10,10,10);
+    Triangle triangulo2(20,20,20);
+    Triangle triangulo3(30,30,30);
+    Triangle triangulo4(40,40,40);
+
+    vector<Triangle> argumentList {triangulo1, triangulo2, triangulo3, triangulo4};
+
+    cout << Triangle::sumOfAreas(argumentList) << endl;
+
+    Triangle::scaleMultiple(argumentList, 2);
 
 }

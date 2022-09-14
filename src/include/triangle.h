@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 using namespace std;
 
@@ -23,10 +24,12 @@ private:
 
 
         Triangle(int s1, int s2, int s3);
-        double getArea();
+        double getArea() const;
         bool hasLargerArea(Triangle t2);
-        static double sumOfAreas(Triangle triangles[], int size);
+        static double sumOfAreas(const vector<Triangle> &triangles);
+        static void scaleMultiple(vector <Triangle> &triangles, double scaleFactor);
         Triangle scale(double scale);
+        Triangle scale();
 };
 
 
